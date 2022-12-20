@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+// 1) 매개 변수 x, 반환형 x
+
+MyName ();
+function MyName(){        // hoisting 됨
+	console.log('백재민');  //아무것도 안찍힘,MyName을 호출하지 않음
+}
+MyName();
+// 함수 MyName이 객체로 생성되어 변수 m에 대입된다. 
+// 이때 m은 일반변수와 다르게 객체명이라 한다
+let m = new MyName();
+
+// 2) 매개변수 x, 반환값 o
+function MyAddress() {
+	return "대한민국";
+}
+let address = MyAddress();      // 대한민국이 MyAddress에 가고 그 값이 address로 가서 나옴     
+console.log(address);
+// 3) 매개변수 o, 반환값 x
+function sum(x,y){
+	let s = x+y;
+	console.log('s=', s);
+}
+sum(10,20);
+sum(20,100);
+let x = 100;
+let y = 200;
+sum(x,y);
+
+// 4) 매개변수 o, 반환값 o
+
+function avg(x,y){
+    let s= x+y
+    let a =s/2;
+    return a;
+	
+}
+console.log(avg(10,20));
+console.log(avg(100,50));
+</script>
+</body>
+</html>

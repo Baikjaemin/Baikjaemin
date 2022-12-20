@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+let mountain = ['백두산','금강산','설악산','한라산'];
+let river = ['두만강','낙동강','한강','섬진강'];
+
+let MnR =['백두산','금강산','설악산','한라산','두만강','낙동강','한강','섬진강'];
+
+//실행 콘솔 하나씩만 하지 않으면 위에서부터 바뀐값으로 대입되기 때문에 주석처리를 해주면서 테스트해ㅔ야됨
+
+all = mountain.concat(river);
+console.log(all);   // 다합친거
+
+r1 = mountain.reverse();
+console.log(r1);    // 한라산 설악산 금강산 백두산
+ 
+r2 = mountain.join('-');
+console.log(r2);    // 백두산-금강산-설악산-한라산
+
+r3 = mountain.shift();
+console.log(r3);   // r3 값은 백두산 mountain 은 금강산 설악산 한라산
+
+r4 = mountain.pop();
+console.log(r4);    //r4 값은 한라산 mountain 은 백두산 금강산 설악산
+ 
+r5 = MnR.splice(2,5);
+console.log(r5);     // 설악산 한라산 두만강 낙동강 한강
+
+r6 = MnR.slice(1,7);
+console.log(r6);     // 금강산 설악산 한라산 두만강 낙동간 한강
+</script>
+</body>
+</html>

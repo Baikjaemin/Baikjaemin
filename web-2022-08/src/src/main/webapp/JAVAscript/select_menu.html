@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+h2{
+  text-align : center;
+}
+
+form{
+   border : 2px solid #aaa;
+   position : relative;
+   width : 650px;
+   min-height : 200px;
+   
+}
+#result{
+   border : 2px solid #aaa;
+   border-radius : 10px;
+   margin-bottom : 10px;
+   margin-right : 10px;
+   margin-top : 10px;
+   top : 0px;
+   right : 0px;
+   position : absolute;
+      
+}
+#a{
+   margin-top :10px;
+   margin-left : 10px;
+   margin-bottom :10px;
+   display :inline-block;
+}
+
+#b{
+   margin-top :10px;
+   margin-left : 10px;
+   margin-bottom :10px;
+   display :inline-block; 
+}
+#c{
+   margin-top :10px;
+   margin-left : 10px;
+   display :inline-block; 
+}
+
+</style>
+</head>
+<body>
+<h2>예약 페이지</h2>
+<form name ='frm'>
+  <div id='a'>
+	  <span>지역</span> <br>
+	  <select name='location' size='5'></select>
+  </div>
+  <div id='b'>
+	  <span>메뉴</span> <br>
+	  <select name='menu' size='5'></select>
+  </div>
+  <div id='c'>
+   <span >인원수</span>
+     <input type='text' name='ea' size='5'> <br>
+   <span>날짜</span>
+     <input type='date' id='d' name='nal'> <br>
+   <span>시간</span>
+     <input type='time' id='e' name='time'> <br>
+     <input type='button' value='확인' name='btn'>
+  </div>
+      <div id='result'>
+          <div id='tot_result'>예약 확인서</div>
+          <div id='location1'></div>
+          <div id='menu1'></div>
+          <div id='people1'></div>
+          <div id='date1'></div>
+          <div id='time1'></div>
+      </div>
+</form>
+<script>
+let frm = document.frm;
+let now = new Date();            //오늘 날짜
+let data={
+    "강남" : ['삼겹살','떡볶이','피자','햄버거','족발'],
+    "안양" : ['빠레트한남','북창동 순두부','푸른바다'],
+    "분당" : ['버터치킨카레','삼겹살','햄버거','피자'],
+    "일산" : ['냉면','한정식','우대갈비','소고기'],
+    "제주" : ['고기국수','딱새우회','매운탕','할어회','떡볶이','감귤']   // 배열 이지만 리터럴 타임의 object다
+}
+
+//날짜와 시간을 설정
+frm.nal.valueAsDate = now;        //오늘 날짜로 설정
+frm.time.value = now.getHours() + ':' + now.getMinutes();     // 현재 시간의 value 값을 15째부터 자르는것 2022. 9. 6. 오후 1:44:48
+//console.log(now.toLocaleString());
+
+//지역 설정
+let keys = Object.keys(data);    //{}형태의 자료에서 key만 가져옴
+/*1) html을 사용하여 태그를 만들어서 추가
+let html;
+
+for(k of keys){
+	html += `<option value="${k}">${k}</option>`;     //배열의 key 값을 가지고 <option value='키값'>키갑</option>을 만든 것
+}
+frm.location.innerHTML = html;
+*/
+//2) option 객체를 생성하여 추가
+frm.location.length = 0;  //select box를 초기화
+for(k of keys){
+	let op = new Option(k,k);
+	frm.location.options.add(op);
+}
+
+// 메뉴 설정
+frm.location.onchange = function(){
+	let k = frm.location.value;
+	let menu = data[k];
+	// 해당 지역의 메뉴를 menu에 추가
+	frm.menu.length = 0;
+    for(m of menu){
+       let op = new Option(m,m);     // 첫번째 m=value , 두번째 m=text
+       frm.menu.options.add(op);
+    }
+}
+
+frm.btn.addEventListener('click',function(ev){
+	let location1 = document.querySelector('#location1');
+	let menu1 = document.querySelector('#menu1');
+	let people1 = document.querySelector('#people1');
+	let date1 = document.querySelector('#date1');
+	let time1 = document.querySelector('#time1');
+	
+	location1.innerHTML = '지역 :' + frm.location.value;
+	menu1.innerHTML = '메뉴 :' + frm.menu.value;
+	people1.innerHTML = '인원수 :' + frm.ea.value;
+	date1.innerHTML = '예약 날짜 :' + frm.nal.value;
+	time1.innerHTML = '예약 시간 : ' + frm.time.value;
+	
+})
+</script>
+</body>
+</html>

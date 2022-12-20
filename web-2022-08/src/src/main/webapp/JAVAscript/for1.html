@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>for1.html</title>
+</head>
+<body>
+구구단을 input 태그로 입력 받아 output 영역에 해당 구구단을 출력 하시오. <br>
+<span>숫자를 입력하시오</span> <br>
+<input type='text'  id='gugudan'> <br>
+<input type='button' value='계산' id='btn'> <br>
+<output id='output'></output> 
+<script>
+/*
+for(var i=10  ; i>0 ; i--) {
+	document.write(i+ ' ');
+}
+
+
+// 구구단 5단을 출력
+let dan=5;
+
+for (let i=1 ; i<10 ; i++){
+	document.write(dan + "*" + i + "=" + (dan*i));
+	document.write("<br>");
+}
+*/
+
+let btn = document.querySelector('#btn')
+let result = document.querySelector('#output')
+
+	btn.onclick = function (){
+	let dan = Number(document.querySelector('#gugudan').value)
+    
+	let str = '';   
+		
+	   for (i=1 ; i<10 ; i++){
+		    
+		   str +=  (dan + "*" + i + "=" + (dan*i));
+		   str +=  ("<br>"); 
+		      }
+	   result.innerHTML = str;
+	}
+</script>
+
+</body>
+</html>

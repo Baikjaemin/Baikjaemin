@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+// 배열을 const로 선언을 해줘도 배열은 바뀔수도 잇음
+let array = [2,5,6,7,3,9,8,5,2,1,1,5,6,7,3,8,9,6,2,3]
+let reduce = array.reduce( function (cur,now){                  //배열의 쓰임새때문에 index라는 변수를 썻을뿐 index는 아님
+	cur[now] = ++cur[now] || 1;
+	return cur;
+},{})       
+
+console.log(reduce);
+</script>
+</body>
+</html>

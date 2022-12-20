@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+// 크기를 지정하지 않고 배열을 선언하는 경우
+// 첨자를 사용하지 않고 push 라고 하는 함수를 사용하는것이 자연스러움
+let score = new Array();
+score[0] = 90;
+score[1] = 80;
+
+let sum = score[0]+score[1];
+console.log('sum=',sum);
+
+// 초기 크기를 지정하고 배열을 선언하는 경우
+let name = new Array(2);
+name[0] = "Baik";
+name[1] = "yoo" ;
+console.log(name);
+console.log(name[0]);
+console.log(name[1]);
+
+// 초기값을 사용하여 배열 선언하는 경우
+// 초기값을 넣어서하는 경우는 거의 없음
+let kor = new Array(44,55,66,77,33);
+console.log('배열의 길이:', kor.length);
+console.log(kor[2]);
+
+sum=0;
+for(x of kor){
+	sum += x;
+	
+	
+}
+console.log('sum=', sum);
+
+//JSON 유형으로 배열을 선언하는 경우
+let his =[66,77,88,99,100];
+
+sum=0;
+his.forEach(function(v, index, his){
+	sum += v;
+	
+});
+console.log('sum2=', sum);
+
+// indexOf : 배열을 검새하여 해당 위치를 반환
+let Ids = new Array('백','유','송','김','박')
+let index = Ids.indexOf('유');
+console.log('index=',index);
+</script>
+</body>
+</html>

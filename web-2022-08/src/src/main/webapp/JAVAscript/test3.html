@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+main{
+    border :2px solid black;
+    background-color : #44f;
+    width :200px;
+    height : 300px;
+    padding : 30px;
+    margin : 30px auto;
+    border-radius : 15px;
+
+}
+
+</style>
+</head>
+<body>
+  <main>
+	<span>아이디</span>
+	<input type='text' value='kim' id='id'> <br>
+	<span>비밀번호</span>
+	<input type='text' value= '1111' id='password'> <br>
+	<input type='button' value='실행' id='btn'>
+	
+	<div>
+	 <output id='output'></output>
+	</div>
+  </main>
+<script>
+let btn = document.querySelector('#btn');
+
+btn.onclick = function(){
+	
+let id = document.querySelector('#id');
+let password = document.querySelector('#password');
+let output = document.querySelector('#output');
+
+let result='';
+
+	if(id.value == 'kim' && password.value == '1111'){
+		result = 'pass';
+	}else{
+        result = 'fail';
+	}
+		output.innerHTML= result;
+}
+</script>
+</body>
+</html>

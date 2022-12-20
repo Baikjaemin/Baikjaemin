@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>If3.html</title>
+</head>
+<body>
+<p>
+  지역과 성별을 input 태그로 입력 받아 서울여자라면 "참"
+  아니면 "거짓" console창에 출력 하시오 
+</p>
+<span>지역</span>
+    <input type='text' id='zone' value='부산'> <br>
+<span>성별</span>
+    <input type='text' id ='gender' value='남자'> <br>
+    <span>결과</span>
+    <output id='print'> <!-- 여기가 innerHTML --> </output> <br>
+    <input type='button' id='btn' value='확인'>
+    
+<script>
+let zone = document.querySelector('#zone');     // 헷갈리지 말자 Selector 안쪽에는 '#id값'
+let gender = document.querySelector('#gender'); // 변수명은 아무거나 지정해두 됨
+let btn = document.querySelector('#btn');
+let print = document.querySelector('#print');
+
+btn.onclick=function() {                  //function 에서 () 빼 먹지 말자 
+ 	/*
+	console.log("버튼이 클릭 되었습니다.");
+	console.log('지역:', zone.value);
+	console.log('성별:', gender.value);
+	*/
+	
+	if(zone.value=='서울' && gender.value=='여자'){
+      print.innerHTML = '참';
+      console.log('참');                // console 모드는 일반 유저와의 인터페이스 역활은 아님 
+		
+	} else {
+	  print.innerHTML = '거짓';	
+	  console.log('거짓');
+	}
+	
+ }
+	
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+div.dan{
+display :inline-block;
+border :2px solid black;
+border-radius : 3px;
+width : 150px;
+text-align : center; 
+margin :15px;
+background-color:skyblue;
+}
+
+</style>
+</head>
+<body>
+<p>x~y까지 구구단 출력</p>
+
+<span>단 x</span> 
+<input type='text' id='x' value='2' size='3'> <br>
+<span>단 y</span> 
+<input type='text' id='y' value='9' size='3'>
+<input type='button' id='btn' value='계산'> <br>
+
+<output id='output'></output>
+<script>
+let btn = document.querySelector('#btn');
+
+	btn.onclick = function() {
+    let result = document.querySelector('#output');
+    let x = Number(document.querySelector('#x').value); // value 값은 onclick안에 선언되어야 제대로 돌아감
+    let y = Number(document.querySelector('#y').value);
+    
+	
+	let str = '';
+    
+	 for(x; x<=y; x++ ){
+		str += ("<div class=dan>"); 
+	    str += (x +'단');
+	    str += ("<br>");
+	         for(i=1 ; i<10; i++){
+		     str += ( x + "*" + i +"="+ x*i );
+		     str += ('<br>');
+             		
+	         }
+     	 str += ('</div>');
+         
+      }
+        result.innerHTML = str;    //for 문의 밖에 출력문을 넣어야 됨 안쪽에 넣으면 결과가 돌고 지워지고를 반복하다 출력
+   
+   }     
+   
+   
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>switch1.html</title>
+<style>
+div#result{
+	border:1px solid blue;
+	padding:10px;
+	width:300px;
+}
+</style>
+</head>
+<body>
+<div id='result'></div>
+<input type='text' id='input' value='초기값'> 
+
+
+
+<script>
+
+let a = 8;
+let str = "" ; 	
+let result = document.getElementById('result');  // ID 값을 가져와라는 명령어
+let input = document.querySelector('#input');   // ID 값 이외에도 class, value 등 여러 값을 가져올수 있게 하는 신규 명령어
+ 
+switch(a){
+	case 8 : str="팔" ; break; //break를 생략 하면 다음 break를 실행함 ex) 여기가 생략되면 "구"가 나옴
+	case 9 : str="구" ; break;
+	case 10 : str="십" ; break;
+	default : str="팔~십 사이가 아님"; break; // 맨마지막 문장에서 break 생략 가능
+}
+
+result.innerHTML = str;  // 이 둘을 가장 많이 씀
+input.value = str;
+ 
+alert(str);              // 모바일 환경이 구축된 이후 사용자가 불편해서 잘 안 쓴다.
+document.write(str);     // 거의 사용안함
+console.log(str);        // 개발자 전용 툴이라 사용 안함
+</script>
+</body>
+</html>

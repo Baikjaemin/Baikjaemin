@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+let arry = [1.2,0.5,45.9,34.01];
+let newArray = arry.map(function(value){
+	return Math.ceil(value);      // value 값을 절상함
+ 	
+});
+console.log('arry:',arry);
+console.log('newArray:',newArray);
+
+let newArray2 = arry.map( (value)=>(Math.ceil(value)) );
+console.log('newArray:', newArray2);
+</script>
+</body>
+</html>

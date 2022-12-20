@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <h3>마음에 드는 연예인을 고르시오</h3>
+  
+<form name='frm' method='post'>
+    
+       <textarea name='re' rows=5 cols=30></textarea> 
+       <br>
+       <label><input type='checkbox' name='chk' value='Dean'>Dean</label>
+       <label><input type='checkbox' name='chk' value='Crush'>Crush</label>
+       <label><input type='checkbox' name='chk' value='Colde'>Colde</label>
+       <label><input type='checkbox' name='chk' value='post Malone'>post Malone</label> 
+       <br>
+       <label><input type='checkbox' name='chk' value='the weeknd'>the weeknd</label>
+       <label><input type='checkbox' name='chk' value='zico'>zico</label>
+       <label><input type='checkbox' name='chk' value='태연'>태연</label> 
+       <br>
+       <label><input type='button' name='btn' value='선택' onclick='mclick(this.form)'></label>
+       <input type ='reset' value='취소'>
+</form>
+<script>
+let str ='';                      //str 변수를 정의
+let chks=[];                      //storage에 저장될 값이나 저장한 값을 저장하는 배열 변수
+
+//sessionStorage에 있는 값을 사용하여 현재 페이지의 초기값으로 설정
+let temp = sessionStorage.getItem('chks');     
+let frm = document.frm ;
+   if(temp != null){
+	   chks = temp.split(',');
+	   for(v of chks){
+		   for(tag of frm.chk){
+			   if(tag.value == v){
+				   tag.checked=true;
+				   str += tag.value + '\n';
+				   break;
+			   }
+		   }
+	   }
+	   frm.re.value= str;
+   }
+       
+function mclick(frm){             //frm.chk[]
+    str = '';                     //str 변수를 사용, 누적하려고 할때는 초기화를 해줘야 함
+    chks=[];
+	for(tag of frm.chk){  
+	   if(tag.checked){
+	   str += tag.value + '\n';   //textarea 에서는 태그가 적용이 안되서 그대로 출력되기 때문에 \n을 사용해야함
+	   chks.push(tag.value);
+	   }
+	}
+   frm.re.value = str;
+   sessionStorage.setItem('chks', chks);      // 배열로 들어가는게 아니라 문장열로 들어감
+}
+
+
+</script>
+</body>
+</html>

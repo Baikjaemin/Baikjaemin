@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 밑의 코드는 디바이스에 따라 페이지 내용의 크기를 자동으로 조절해준다.PC에서는 거의 영향없고 모바일에만 -->
+<meta name='viewport' content='width=device-width, initial=1.0'>
+<title>나혼자 해보는거!</title>
+</head>
+ 
+ <body>
+ <!-- 이 파일은 혼자 복습하며 여자친구로 주제를 바꿔 만들어본 파일입니다. -->
+ <h1> 배운거 연수로 바꿔서 해보기!</h1>
+  
+   연수양 왕왕 보구싶옹ㅜ <br>
+      놀러가자! 온능!   <br>
+  <p><font color='#ff0000' size='3'> 백재민 </font></p>
+  <p><font color='#00ff00' size='3'> 유연수 </font></p>
+  <p><font color='#0000ff' size='3'> 어머님 </font></p>
+  <hr>
+  
+ <fieldset>
+  <legend>연수랑 놀러가고 싶은곳</legend>
+  <ul type=square>
+  <li> 롯데월드 </li>
+  <li> 캐리비안 베이 </li>
+  <li> <span style="color:blue;">연남동</span> 다시 가보기 </li>
+  <li> 부산 </li>
+  <li> 강릉 </li>
+  </ul>
+  <!-- 이미지 파일의 경로를 제대로 알고 코딩할것 -->
+  <img src="./images/busan.jpg" width='200px' height='200px' alt='부산 해운대'>
+  <img src="./images/lotteworld.jpg" width='200px' height='200px' alt='롯데월드'>
+ </fieldset>
+ <hr>
+ 
+<h3><mark>여기서</mark> 머무는건 오때?</h3>
+<details> 
+  <summary>호텔 리스트</summary>
+  <ol type="I" start="1"> <!-- reversd로 반대로 세기도 가능-->
+  <li><a href="https://www.shillahotels.com/index.do" target='_blank'>서울 신라호텔</a></li>
+  <li><a href="https://oakwoodpremier.co.kr/front/" target='_blank'>송도 오크우드 호텔</a></li>
+  </ol>
+</details>
+<details>
+  <summary>방 사진</summary>
+   <img src="images/dog.jpg" width='200px' height='100px'>
+</details>
+<hr>
+ 
+ <form>
+ <fieldset>
+ <legend>연수와 나</legend>
+ <ul>
+ <li><label>우리가 만난 날은?</label></li>
+ <input type='date' name='nal'> <br><br>
+ 
+ <li><label>썸원 오는 시간은?</label></li>
+ <input type='time' name='time'> <br><br>
+ 
+ <li><label>우린 평소에 뭐하구 놀까?</label></li>
+ <input type='checkbox' name='hobby' value='PC방'>PC방
+ <input type='checkbox' name='hobby' value='낮잠'>낮잠
+ <input type='checkbox' name='hobby' value='넷플릭스'>넷플릭스
+ <input type='checkbox' name='hobby' value='맛난거 먹기'>맛난거 먹기 <br><br>
+ 
+ <li><label>우리는 나중에 결혼할까?</label></li>
+ <label><input type='radio' name='marriage' value=yes>yes</label>
+ <label><input type='radio' name='marriage' value=yesss!!! checked>yesss!!!</label> <br><br>
+ 
+ <li><label>서로의 번호로 로그인 해보자!</label></li>
+ <label>공쥬의 번호</label>
+ <input type='text' name='id' size='15' maxlength='15'> <br>
+ <label>내 번호</label>
+ <input type='password' name='psd' size='15' maxlength='15' placeholder='설마 까먹진 않았지?'> <br><br>
+ 
+ <li><label>내 키가 몇이게?</label></li>
+ <input type='number' name='height' min='150' max='300' step='1' value='150'> <br><br>
+ 
+ <li><label>오늘 자기 기분은 어때?</label></li> <br>
+ 싫어!<input type='range' name='feel' min='0' max='100' step='5'>좋아! <br><br>
+ 
+ <li><label>커플티 무슨 색으로 살까?</label></li>
+ <input type='color' name='color'> <br><br>
+ 
+ <li><label>여기엔 연수 사진만 있음 좋게써!</label></li>
+ <input type='file' name='gallery' multiple accept='images/*video/*'> <br><br>
+ 
+ <li><label>점심에 모먹을까?</label></li>
+ <select name='launch' size='1'>
+  <option value='신전떢볶이'>신전떢볶이</option>
+  <option value='엽떡'>엽떡</option>
+  <option value='순찌'>순찌</option>
+  <option value='빠레트 한남'>빠레트한남</option>
+  <option value='칼삼'>칼삼</option>
+ </select><br><br>
+ 
+ <li><label>결혼까지 남은 기간!</label></li>
+ <progress max='100' value='60'></progress>힛 바램야! <br><br>
+ 
+ <li><label>만나서 뭐할까?</label></li>
+ <select>
+ <optgroup label='1.피방갔다가'>
+   <option value='home'>집에서 낮잠!</option>
+   <option value='out'>다시 피방!</option> 
+ </optgroup>
+ <optgroup label='2.집에서 맛나게 먹구'>
+   <option value=''>낮잠 거하게!</option>
+   <option value=''>피방으루!</option>
+ </optgroup>
+ </select> <br><br>
+ 
+ <li><label>나한테 하구 싶은말!</label></li> 
+ <textarea name='talk' cols='45' rows='3'></textarea> 
+ </ul>
+ </fieldset>
+ </form>
+  
+</body>  
+</html>

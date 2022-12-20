@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id='dom'>
+  <div id= 'del'>삭제될 항목</div>
+  <button type='button' onclick='delDiv()'>DIV 삭제 </button> <br>
+  <select id='sel'>
+     <option value='강아지'>강아지</option>
+     <option value='송아지'>송아지</option>
+     <option value='망아지'>망아지</option>
+     <option value='삭제되지'>삭제되지</option>
+  </select> <br>
+  <button type='button' onclick='delOption()'>OPTION 삭제 </button>
+</div>
+<script>
+function delDiv(){
+	let div = document.querySelector('#del');
+	div.remove();
+}
+
+function delOption(){
+	let sel = document.querySelector('#sel');
+	sel.removeChild(sel[3]);
+}
+</script>
+</body>
+</html>

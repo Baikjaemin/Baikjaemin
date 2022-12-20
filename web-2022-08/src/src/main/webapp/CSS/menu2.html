@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+nav ul {
+   list-style:none;
+   }
+nav a{
+  text-decoration:none;
+  position:absolute;
+  width:100%;
+  height:100%;
+  text-align:left;
+}
+nav li{
+  background-color:#000;
+  width:250px;
+  height:40px;
+  border:2px solid grey;
+  transition:background-color 0.5s ,margin-left 0.5s,
+             transform 0.5s;
+  position:relative;
+}
+li:hover{
+    background-color:grey;
+    --margin-left:20px;
+    transform:rotate(3deg);
+    }
+</style>
+</head>
+<body>
+<nav>
+<ul>
+  <li><a href='#'>Home</a></li>
+  <li><a href='#'>About us</a></li>
+  <li><a href='#'>Contact us</a></li>
+  <li><a href='#'>Portfolio</a></li>
+  <li><a href='#'>Sign in</a></li>
+</ul>
+</nav>
+</body>
+</html>

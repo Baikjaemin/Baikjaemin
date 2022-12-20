@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form name='frm'>
+<span>아이디</span>
+<input type='text' value='kkk' name='id'>
+<input type='button' value='실행' onclick='find()'>
+
+</form>
+<script>
+function find(){
+   let frm = document.frm;
+   let id = frm.id.value;
+	
+   let pw = SearchId(id);
+	alert(pw);
+}
+function SearchId(id){
+   let pw = '좆까 병신아';
+    if(id=='kkk'){
+    	pw = '1111'
+    }
+ 	
+    return pw;	
+}
+</script>
+</body>
+</html>

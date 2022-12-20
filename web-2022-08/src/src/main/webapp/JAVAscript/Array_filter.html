@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+let scores = [
+   {'name' : 'baik', 'score': 90, 'phone' : '010'},
+   {'name' : 'yoo', 'score' : 90, 'phone' : '010'},
+   {'name' : 'song', 'score' : 95, 'phone' : '012'},
+   {'name' : 'kim', 'score' : 10, 'phone' : '013'},
+   {'name' : 'park', 'score' : 40, 'phone' : '014'},
+]
+
+// for of
+for(v of scores){
+	console.log(v.name, v.score, v.phone);
+}
+
+//forEach
+scores.forEach( function(v,index){
+    console.log(index,v.name,v.score,v.phone);	
+})
+
+// filter를 사용하여 조건에 맞는 자료를 모아 새로운 배열 생성
+// 이방식은 비추
+let passArray = scores.filter(function(v){
+	if(v.score>=60) return true;
+	else return false;
+	
+})
+console.log(passArray);
+
+// filter를 사용하여 불합격자 명단을 모아 새로운 배열을 만들고 출력
+// 이방식을 추천 else문을 따로 안써도됨
+let failArray = scores.filter( function(v){
+	let flag = false;
+	if(v.score<60) flag=true;
+	return flag;
+})
+console.log(failArray);
+
+// filter를 사용하여 연락처가 010인 배열을 모아 새로운 배열을 만들어 출력
+let phoneArray = scores.filter( function (v){
+	let flag = false;
+	if(v.phone == '010') flag=true;
+	return flag;
+})
+console.log(phoneArray);
+</script>
+</body>
+</html>

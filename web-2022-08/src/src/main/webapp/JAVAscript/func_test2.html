@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+3개의 점수가 각각 kor,eng,his 변수에 저장되어 있다. <br>
+이 세개의 변수를 매개벼누로 전달하여 평균을 구한 값을 반환 받아 console에 출력하시오 <br>
+(함수명 : MyAvg)
+</div>
+
+<script>
+  let kor = 90;  
+  let eng = 80;
+  let his = 95;
+  let k = MyAvg(kor,eng, his);
+  console.log('평균:', k.toFixed(2));
+  
+  
+function MyAvg (x, y, z){
+   	return (x+y+z)/3.0;
+             	
+}
+
+
+</script>
+</body>
+</html>

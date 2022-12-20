@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>inline-block</title>
+<style>
+span{
+      width:500px;
+      background-color:#ff0;
+    } /* inline의 유형의 태그엔 줄바뀜 width,height가 지정되지 않음*/
+p{
+      width:100px;
+      background-color:#88f;} /* block의 휴영의 태그 */
+  div{
+      width:150px;
+      background-color:#f77;
+      display:inline-block;
+  }
+ div.none{
+       display:none;
+ }
+</style>
+</head>
+<body>
+<h2>inline</h2>
+<span>성명</span>
+<span>암호</span>
+
+<h2>block</h2>
+<p>문단1</p>
+<p>문단2</p>
+
+<h2>inline-block</h2>
+<div>DIV1</div>
+<div>DIV2</div>
+
+<h2>none</h2>
+<div class='none'>내용 감춤</div>
+<hr>
+</body>
+</html>

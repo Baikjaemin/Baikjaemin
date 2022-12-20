@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+let students = [
+	{'name' : 'baik' , 'grade' : 1},
+	{'name' : 'yoo' , 'grade' : 1},
+	{'name' : 'song' , 'grade' : 2},
+	{'name' : 'kim' , 'grade' : 3},
+	{'name' : 'park', 'grade': 2}
+
+]
+
+let groupby = function(array, key){
+  let r= array.reduce(function(data,obj){
+	  var k = obj[key];
+	  data[k] 
+	  if(!data[k]) data[k] = [];
+	  data[k].push(obj);           
+	  return data;
+	  
+  },{});
+  
+  return r;
+};
+let gp = groupby(students,'grade');
+// for of 를 사용하여 1학년만 출력
+   for ( r of gp['2']){
+	console.log('name:', r.name, 'grade:', r.grade)
+   };
+
+//forEach를 사용하여 1학년만 출력
+console.log('---------------')
+gp['1'].forEach(function(v){
+     console.log('name:' , v.name , 'grade:', v.grade);	
+})
+
+console.log( groupby(students, 'grade') );
+console.log( )
+</script>
+</body>
+</html>

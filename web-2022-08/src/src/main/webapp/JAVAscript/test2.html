@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form name='frm'>
+<span>첫번째 값</span>
+<input type='text' name='a1' value='1'> <br>
+<span>두번째 값</span>
+<input type='text' name='a2' value='10'> <br>
+<input type='button' name='btn' value='실행'>
+</form>
+
+<script>
+let x = Number(frm.a1.value);
+let y = Number(frm.a2.value);
+
+
+frm.btn.onclick = function (){
+    while (x<=y){
+        if(x%3 != 0 && x%5 != 0){
+         console.log(x);
+        }
+          x++;
+   }
+}
+
+</script>
+</body>
+</html>

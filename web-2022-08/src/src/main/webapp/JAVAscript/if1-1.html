@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+
+let zone;
+let km;
+let price;
+let amt;
+let tax=0; // 할증액
+let tot=0; // amt +tax  
+ zone = prompt("시내? 시외?","시외");
+ km = prompt("주행 거리는 ?", 20);
+ price = prompt("기본 단가 ?", 2000);
+ amt = km*price
+ /* if문은 이 구간에다 써야 됨 
+    일반적으로 변수는 맨위에 선언하고 처리할 값을 쓰고 제어문을 써야 올바른 코드*/
+ 
+ if(zone=='시외'){
+    tax = amt *0.1;
+
+ }
+ 
+ tot = amt + tax;
+
+ document.write('<li>zone :' +zone);
+ document.write('<li>Km :' + km);
+ document.write('<li>Price :' +price);
+ document.write('<li>amt :', + amt);
+ document.write('<li>tax :' + tax);
+ document.write('<li>tot :' + tot);
+
+
+</script>
+</body>
+</html>

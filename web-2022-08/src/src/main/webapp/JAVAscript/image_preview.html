@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#photo_file{
+     display : none;
+}
+#photo{
+     width : 200px;
+     height : 250px;
+     border : 5px solid #aaa;
+     border-radius : 7px;
+}
+#photo:hover{
+    cursor : pointer;
+}
+</style>
+</head>
+<body>
+<h3>프로필 사진 등록</h3>
+<input type='file' id='photo_file' onchange='preview()'>
+<img src= '' id='photo'>
+
+<script>
+let btnFile = document.querySelector('#photo_file');
+let photo = document.querySelector('#photo');
+
+photo.onclick = function(){         //사진을 클릭하면 파일태그를 클릭된거 처럼 작동하는 요소
+	btnFile.click();
+}
+
+function preview(ev){
+	let event = ev || window.event;        // ||문법은 변수 선에 있어서 해당하는 값이 있는경우 앞의 값을 선언하고 없는 경우에는 뒤의 값을 선언
+	let file = event.srcElement.files[0];  // event.srcElement 이벤트가 발생한 개체를 반환/설정
+	
+	let reader = new FileReader();
+	reader.onload = function(fev){
+		let pre_img = document.querySelector('#photo');
+		let img = new Image();
+		img.src = reader.result;
+		pre_img.src = img.src;
+	}
+       reader.readAsDataURL(file);	
+}
+ /*
+    btnFile.onchange = function(ev){
+	 let file = ev.srcElement.files[0];
+	 let reader = new FileReader();
+	 reader.readAsDataURL(file);
+	 reader.onload = function(fev){
+		 let tempImg = new Image();
+		 tempImg.src = this.result;
+		 photo.src = tempImg.src;	
+	 }
+	 
+ }
+ 
+ */
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>아이디를 까먹었나요?</h2>
+<form name='frm'>
+   <span>Email</span>
+   <input type='text' value='a001@korea.com' name='email'> <br>
+   <span>Pwd</span>
+   <input type='password' value='1111' name='pwd'>
+   <input type='button' value='실행' name='btn' onclick='SearchId()'>
+ 
+</form>
+<script>
+let frm = document.frm
+
+   function Chk(email,pwd){
+	        id = '응 틀렸어 병신아~';
+	    if (email=='a001@korea.com' && pwd=='1111'){
+	    	id = 'a001';
+	    }
+            return id;
+   }  
+   
+  
+  function SearchId(){
+	  let email = frm.email.value;
+	  let pwd = frm.pwd.value;
+	  
+	  let id = Chk(email,pwd);
+	 
+	  alert(id);
+  }
+
+</script>
+</body>
+</html>

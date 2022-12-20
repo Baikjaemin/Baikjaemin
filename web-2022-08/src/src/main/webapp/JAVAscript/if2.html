@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>if2.html</title>
+</head>
+<body>
+<p>
+몸무게가 150이하이고 키가 200이하이면 "탑승가능"
+아니면 "탑승 불가"
+</p>
+
+<span>몸무게</span>
+<input type = 'text' id ='weight' value='50'>
+<br>
+<span>키</span>
+<input type = 'text' id ='height' value ='180'>
+<br>
+<input type='button' value='결과' id='btn'>
+
+<script>
+let w = document.querySelector('#weight'); //id 값을 가져와서 변수 w에 대입한다. 정적 페이지가 동적 페이지로 바뀐다.
+let h = document.querySelector('#height');
+let btn = document.querySelector('#btn');
+
+btn.onclick = function(){                   // btn 이라는 버튼이 클릭 됐을때를 나타내는 이벤트 태그, function : ~ 실행 됐을때 쓰는 call back 함수   
+	console.log('버튼이 클릭되었습니다.');        // 조건문을 이벤트 안에 넣어야 제대로 실행 가능!! 
+    console.log('몸무게:', w.value);          // .vlaue 값으로 지정 해줘야 html에서의 value 값을 대입 할수 있음 
+    console.log('키:', h.value);
+    if ((w.value<=150) && (h.value<=200)){
+  	  console.log("탑승가능");
+  	
+  	
+  } else {
+  	  console.log("탑승불가");
+  	
+  }
+}
+   
+</script>
+</body>
+</html>

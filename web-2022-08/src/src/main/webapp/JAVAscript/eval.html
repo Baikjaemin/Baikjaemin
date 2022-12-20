@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<p>계산식을 input태그로 입력하여 그 계산결과를 textarea 태그에 출력 </p>
+<input type='text' size='40' id='oper'>
+<input type='button' value='계산' id='btn'> <br> <br>
+<textarea id='result' cols='40' rows='10'> </textarea> 
+<script>
+
+  let btn = document.querySelector('#btn');
+  
+  btn.onclick = function(){
+  
+    let oper = document.querySelector('#oper').value;
+    let result = document.querySelector('#result');
+	
+    
+    result.value = "결과는... \n 몰까ㅏㅏㅏㅏ용? \n" ;                //textarea 는 뒤에 value 를 붙여야 나옴
+    result.value += eval(oper);                                  // textarea 는 문자 그대로 나오기 때문에 "<h1>hi</h1>" 해도 그대로 나롬
+	                                                            // 줄을 바꾸고 싶으면 \n 을 써야됨
+	   
+  }
+</script>
+</body>
+</html>

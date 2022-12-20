@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+/* 학생관리 */
+
+html,body{
+	margin:0;
+	padding:0;
+	box-sizing:border-box; /*기본값이다 생각하면 됨 */
+	
+}
+
+#std_input{
+	  width:600px;
+	  margin:30px auto;
+	  border: 2px solid black;
+	  padding:30px;
+	  border-radius:6px;
+	  box-shadow:3px 3px 4px #bbb;
+}
+
+#std_input>form span{
+	display:inline-block;
+	width:100px;
+	text-align:right;  /* 내가 몰랐던 박스 기준 좌우 정렬 하는 코드 */
+	
+}
+
+#std_input .btnZone{
+    margin-top:10px;	
+	
+}
+
+#std_input>h2{
+    text-align:center;	
+}
+
+a{
+	text-decoration:none;
+	
+}
+
+
+/* 학생 정보 조회 */
+
+#std_list{
+	width:1100px;
+	margin:30px auto;
+	
+}
+
+#std_list ul{
+	list-style:none;
+	margin-top:3px;
+}
+#std_list li.title{
+	background-color:#444;
+	color:#fff;
+	padding:3px;
+}
+
+#std_list li>span{
+	display:inline-block;
+	padding:10px;
+	
+}
+#std_list li>span.no{
+	width:80px;
+	text-align:right;
+	margin-right: 20px;
+}
+#std_list li>span.id{
+	width:120px;
+	
+}
+#std_list li.span.name{
+	width:100px;
+	
+}
+#std_list li.span.gender{
+	width:50px;
+}
+#std_list li.span.phone{
+	width:130px;
+	
+}
+#std_list li.span.address{
+	width:180px;
+	white-space:nowrap;
+	overflow:hide;
+	text-overflow:ellipsis;
+	
+}
+#std_list li.email{
+	width:150px;
+	
+}
+#std_list li.zipcode{
+	width:80px;
+	
+}
+
+#std_list>form{
+	text-align:right;
+	
+}
+
+
+#std_list li.btnpage{
+	text-align:center;
+	margin-top:5px;
+	padding-top:10px;
+	border-top:2px dotted #aaa;
+	
+}
+
+#std_list li.btnpage>input{
+    border-radius:10px;
+    border:1px solid #aaa;
+    padding: 2px 4px;	
+	
+}
+
+#std_list li.btnpage>input:hover{
+	background-color:#44f;
+	color:#fff;
+	
+}

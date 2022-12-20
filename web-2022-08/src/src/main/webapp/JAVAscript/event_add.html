@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input type='button' value='INLINE' onclick='func1()'>
+<input type='button' value='ONCLICK' id='btn'>
+<input type='button' value='LISTENER' id='btn2'>
+<script>
+function func1(){
+    let ev = window.event;
+    console.log(ev);
+}
+let btn = document.querySelector('#btn');
+btn.onclick = func1;   //callback 함수를 지정 (o)
+//btn.onclick = func1(); //이벤트 핸들러에 ()를 붙이면 안됨 붙이면 함수 func1의 실행결과가 대입 되는 의미 (x)
+
+let btn2 = document.querySelector('#btn2');   // 최근에는 이방식을 더 많이씀 이벤트 취소를 하기 더 쉬워서
+btn2.addEventListener('click', func1);
+</script>
+</body>
+</html>

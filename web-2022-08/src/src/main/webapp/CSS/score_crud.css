@@ -1,0 +1,89 @@
+@charset "UTF-8";
+body{
+	margin : 0;
+	padding : 0;
+	box-sizing :border-box;     /* 패딩을 줘도 전체 사이즈가 깨지지 않도록 함 */
+}
+main{
+	width : 1050px;
+	min-height : 400px;
+	margin : 30px auto;
+	border : 3px outset #aaa;
+	padding : 20px;
+	border-radius : 15px;
+	box-shadow : 3px 3px 5px #999;
+	overflow : auto;           /*영억이 자동으로 늘어날수 있도록 함 */
+	position : relative;       /* 자식이 늘어나도 부모가 늘어나지 않도록 함 */
+	background-color : rgb(128, 128, 255);
+}
+#headertitle{
+	font-size : 25pt;
+	font-weight : border;
+	text-align : center;
+	margin-bottom : 20px;
+}
+main>div>form{
+	width : 200px;
+	float : left;
+	background-color : rgb(128, 255, 128);
+	border-radius :10px;
+	padding : 20px;
+}
+
+form>span{
+	display : inline-block;
+	width :65px;
+} 
+form>input[name=serial]{
+	width :70px;
+}
+form>input[name=id]{
+	width : 70px;
+}
+
+form>input[name=subject]{
+	width : 70px;
+}
+form>input[name=score]{
+	width : 70px;
+}
+form>input[name=btnOutput]{
+	width : 140px;
+}
+/* 목록 표시 부분*/
+div#right{
+	float : right;
+	width : 800px;
+}
+
+div.title{
+	color : #fff;
+	background-color : rgb(128, 255, 128);
+	padding :2px 10px;
+	border-radius : 5px;
+	
+}
+
+#right span{
+	display : inline-block;
+}
+#right span.serial{ width :100px;}
+#right span.id{ width : 100px;}
+#right span.subject{ width :100px;}
+#right span.score{ width :100px; text-align : right;}
+
+
+#items{
+	padding : 2px 30px;
+}
+
+#items>div:last-child{
+	border-bottom : 1px solid #aaa;
+}
+
+
+
+#items>.item:hover{
+	background-color : #ddd;
+	cursor : pointer;
+}

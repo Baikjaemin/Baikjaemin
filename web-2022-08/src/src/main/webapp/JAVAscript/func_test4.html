@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+1. 아이디와 암호를 매개변수로 전달받아 회원이면 "pass", 회원이 아니면 "fail"
+을 리턴하는 함수 Login을 작성하시오.(a001/1111인 경우 회원)
+<br>
+2. 아이디를 전달받아 아이디가 있으면 암호를 리턴하는 함수 SearchPwd를 작성하시오.
+(a001 -> 1111을 리턴)
+<br>
+
+3.이메일과 암호를 매개변수로 전달 받아 존재하면 회원의 아이디를 리턴하는 
+함수 SearchId를 작성하시오(a001@korea.com/1111  -> a001을 리턴)
+<br>
+
+4. Login, SearchPwd, SearchId를 테스트 코드를 작성. <br>
+</div>
+<script>
+// 공유변수
+let id= 'a001';
+let pwd = '1111' ;
+let email = 'a001@korea.com';
+
+// 1)-----------------------------------------
+function Login(id,pwd){             //(id,pwd)를 xy로 바꾸면 논리적 오류가 있음
+	let a = 'FAIL'
+	if(id=='a001' && pwd=="1111"){
+		a = 'PASS'
+	}
+	return a;
+}
+
+let login = Login(id,pwd);
+document.write("Login : " +login);
+document.write("<br>");
+
+// 2)-----------------------------------------
+function SearchPwd(id){
+    let b = 'Error';
+    if(id=="a001"){
+        b= pwd;  	
+    }
+    return b;
+}
+
+let searchpwd = SearchPwd (id);
+document.write("PWD : " + searchpwd);
+document.write("<br>");
+
+// 3)---------------------------------------
+function SearchId(email,pwd){
+	let c = 'Error'; 
+	if(email=='a001@korea.com' && pwd=='1111'){
+	     c= id;	
+         return c;
+	}
+}
+	
+document.write("ID :" +SearchId(email,pwd));
+
+</script>
+</body>
+</html>

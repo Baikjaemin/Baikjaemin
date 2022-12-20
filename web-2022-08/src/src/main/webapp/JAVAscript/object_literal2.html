@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ 아래의 내용으로 MyMath 리터널을 작성하시오
+ 1) max(x,y) 큰값 리턴
+ 2) min(x,y) 작은값 리턴
+ 3) sum(x,y) x~y 까지의 합계를 계산하여 리턴
+ 4) even(x) x가 짝수면 true 홀수면 false 리턴
+ 5) swap(x,y) x,y값을 교환
+<script>
+//1)
+let MyMath ={};
+MyMath.max = function(x,y){
+	 return (x>y)? x: y;
+}
+console.log(MyMath.max(10,20));
+//2)
+MyMath.min = function (x,y){
+	return (x<y)? x: y;
+}
+console.log(MyMath.min(10,20));
+//3)
+MyMath.sum = function(x,y){
+	let s= 0;
+	for(let i=x; i<=y; i++)
+			s += i;
+			return s;
+	}
+console.log(MyMath.sum(1,10));
+//4)
+MyMath.even = function(x){
+	 return x%2 ==0;
+}
+console.log(MyMath.even(15));
+console.log(MyMath.even(16));
+
+let m={
+	max : function(x,y) {return (x>y)? x:y},
+    min : function(x,y) {return (x<y)? x:y},
+    sum : function(x,y) {
+    	let s=0;
+    	for(i=x; i<=y; i++)
+    		s += i;
+    	    return s; 
+    },
+    even : function(x) {return x%2==0},
+}
+console.log(m.max(1,10));
+console.log(m.min(1,10));
+console.log(m.sum(1,10));
+console.log(m.even(10));
+//5)
+
+</script>
+</body>
+</html>

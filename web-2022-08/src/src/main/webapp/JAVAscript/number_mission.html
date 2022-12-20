@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>number_mission.html</title>
+</head>
+<body>
+<div>
+    수량과 단가를 입력받아 금액, 부가세 10%를 계산하여 합계를 출력하시오.
+    단, 소숫점이하는 절삭처리.
+    <li>총액은 부가세 10%가 포함된 금액으로 수정
+</div>
+<form name='frm'>
+<span>수량</span>
+<input type='text' value='4' name='ea'> <br>
+<span>단가</span>
+<input type='text' value='1000' name='price'> <br>
+<span>금액</span>  
+<output name = 'amt'></output> <br>
+<span>부가세</span>
+<output name='tax'></output> <br>
+<span>총액</span>
+<output name='total'></output> <br>
+<input type='button' value='계산' name='btn'>
+</form>
+<script>
+let frm=document.frm;
+
+frm.btn.onclick = function() {
+let ea = Number(frm.ea.value);
+let price = Number(frm.price.value);
+let amt = frm.amt;
+let tax = frm.tax;
+let total = frm.total;
+
+//부가세 포함 계산
+let b=ea*price;    
+
+let v = b *100/110;             
+let t = b *10/110;
+
+
+
+amt.value = v;
+tax.value = t;
+total.value = v+t;
+
+}
+
+</script>
+
+</body>
+</html>

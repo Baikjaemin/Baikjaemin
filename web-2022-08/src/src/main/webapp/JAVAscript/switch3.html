@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class='info'>
+  입사년도와 급여를 input 태그를 사용하여 입력받고,
+  <li> 1년차 :100%</li>
+  <li> 3년차 :150%</li>
+  <li> 5년차 :200%</li>
+  <li>10년차 이상 : 300% </li>
+  보너스를 지급하도록 프로그램 하시오
+  출력은 입사년도, 급여, 보너스액, 총액을 출력하시오
+</div>
+<span>입사 년도를 입력하시오</span>
+<input type='text' id='hireDate' value='2020'> <br>
+<span>급여를 입력하시오</span>
+<input type='text' id=pay value='10000'> <br>
+<input type='button' id='btn' value='보너스 계산'><br>
+
+<span>보너스 액</span>
+<output id='bonus'></output> <br>
+<span>총액</span>
+<output id='total'></output>
+
+<script>
+
+let a = document.querySelector('#hireDate');
+let b = document.querySelector('#pay');
+let btn = document.querySelector('#btn');
+let bonus2 = document.querySelector('#bonus')
+let total2 = document.querySelector('#total');
+
+btn.onclick = function (){
+	
+	let year = Number(a.value);
+	let pay = Number(b.value);
+	let h = 2022 - Number(a.value);
+    
+	switch(true){
+		case h >= 10 : bonus = pay*3.0; break;
+		case h >= 5  : bonus = pay*2.0; break;
+		case h >= 3  : bonus = pay*1.5; break;
+		case h >= 1  : bonus = pay*1.0; break;
+	
+	}
+	bonus2.innerHTML = bonus ;
+	total2.innerHTML = pay + bonus ;
+	
+	
+}
+
+</script>
+</body>
+</html>

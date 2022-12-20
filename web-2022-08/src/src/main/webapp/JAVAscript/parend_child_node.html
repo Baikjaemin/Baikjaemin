@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div = id='parent'>
+   <input type='button' class='previous' value='previous'>
+   <input type='button' class='me' value='나'>
+   <input type='button' class='next' value='next'>
+</div>
+<script>
+  let me = document.querySelector('.me');  // class명에는 .class명으로 선언
+  
+  let parent = me.parentElement;
+  let leftBtn = me.previousElementSibling;
+  let rightBtn = me.nextElementSibling;
+  
+  console.log('parent :', parent.id);
+  console.log('me :', me.value);
+  console.log('prev :', leftBtn.value);
+  console.log('next :', rightBtn.value);
+  
+  console.log('--------------------');
+  
+  let childs = parent.children;
+  console.log('childs cnt :', childs.length);
+  console.log(childs[0].value);
+  console.log(childs[1].value);
+  console.log(childs[2].value);
+ 
+</script>
+</body>
+</html>

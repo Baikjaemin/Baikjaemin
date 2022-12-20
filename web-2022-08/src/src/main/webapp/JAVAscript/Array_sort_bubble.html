@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+//bubble sort
+//자리를 두자리씩 비교해서 정렬하는 로직
+//0번자리1번자리 비교,1번자리 2번자리 비교, 2번자리 3번자리 비교
+
+let s =[9,1,5,3,8,2,42,12,6]
+let change=true;
+let last =1;
+console.log(s);
+
+do{
+	change = false;
+	for(i=0; i<s.length-last; i++){
+		if(s[i]>s[i+1]){        
+		   min = s[i+1];
+		   s[i+1] = s[i];
+		   s[i] = min;
+		   change = true;
+		}
+	}
+	last++;                // 1회전이 끝나면 맨 끝자리에 가장 큰수가 들어가기 때문에 정렬 자리를 한자리씩 줄여줘두 됨
+	console.log(s);
+}while(change);
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+ <li> 총액은 부가세 10%가 포함된 금액으로 수정
+</div>
+<form name='frm'>
+<span>수량</span>
+<input type='text' name='ea' value='123'> <br>
+<span>단가</span>
+<input type='text' name='price' value='15'> <br>
+<span>금액</span>
+<output name='amt'></output> <br>
+<span>부가세</span>
+<output name='tax'></output> <br>
+<span>총액</span>
+<output name='total'></output> <br>
+<input type='button' value='실행' name='btn'>
+</form>
+<script>
+let frm = document.frm;    
+frm.btn.onclick = function(){
+    let ea = Number(frm.ea.value);	
+    let price = Number(frm.price.value);
+    let amt = frm.amt;
+    let tax = frm.tax;
+    let total = frm.total;
+    
+    //부가세 미포함 계산
+    let v = ea*price;
+    let t = parseInt(v*0.1);
+    //let t = Number((v*0.1).toFixed(0));    Number를 붙여야 문자렬로 안됨 toFixed 는 문자열로 바뀜              /
+    amt.value = v.toLocaleString();      //amt 태그의 value 값에 계산한 값을 넣어라
+    tax.value = t.toLocaleString();
+    total.value = (v+t).toLocaleString();    //toLocaleString() = 현지 금액 계산 문자열로 나타내는 명령어 ()안에 국가코드를 넣어 변경 가능 문자열이기 때문에 계산이 다 끝난후 출력시에만 쓸것
+}
+
+
+
+  
+
+
+
+
+function test(){              //함수 선언 
+     let amt = 12345.6789;
+    
+     console.log(parseInt(amt));                    //소숫점 이하가 절삭
+     console.log(parseInt(amt+0.5));                //parseInt에서 0.5를 더하면 반올림이 됨
+     console.log(parseInt((amt/10+0.5))*10);        //1의 자리에서 반올림 하는 방법 12350
+     console.log(parseInt((amt/100+0.5))*100);      //10의 자리에서 반올림 12300
+     
+     console.log('-----------');
+     console.log(amt.toFixed(0));                   //소숫점 이하 반올림
+     console.log(amt.toFixed(1));
+}	
+test();                       //함수 호출
+</script>
+</body>
+</html>

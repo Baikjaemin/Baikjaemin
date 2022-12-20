@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>   <!-- script 파일을 body 위에 쓰고 싶으면 window.onload로 script전체를 불러와야함 그렇지 않으면 실행이 안됨 -->
+<b><h3> Select를 이용하여 바탕 색상 바꾸기 </h3></b><p>  
+<form name='frm'>
+  <input type='text' name='tt'>
+  <select name='sel' onChange = 'chang(this.form)'>
+    <option value='#000000'>검은색
+    <option value='#006600'>녹색
+    <option value='#00FF00'>연두색
+    <option value='#FF0000'>빨간색
+    <option value='#FFFFFF'>흰색
+  </select>
+  <input type='button' value='white' onClick="mclick(this.form,'white' )">
+</form>
+<script>
+//sessionStorage에 있는 값을 가져와 초기 설정
+let bg;
+bg = sessionStorage.getItem('bg');
+if(bg !=null){
+	let ff= document.frm;
+	for(tag of ff.sel){                //.sel == selcet 상자
+		if(tag.value ==bg){
+			ff.sel.value = bg;
+			ff.tt.style.backgroundColor = bg;
+		}
+	}
+	
+}
+function mclick(ff,v){          //ff 는 this.form을 받은것 v는 this.value
+	f.tt.style.backgroundColor= v;
+	save('#fff');
+}
+function chang(ff){
+	let color = ff.sel.options[ff.sel.selectedIndex].value;
+	ff.tt.style.backgroundColor = color;
+	save(color);
+}
+
+function save(bg){
+	sessionStorage.setItem('bg',bg);
+}
+</script>
+</body>
+</html>

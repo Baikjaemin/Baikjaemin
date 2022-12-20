@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+<h2>태그명을 입력하세요</h2>
+<input type='text' id='tag' value='form'>
+<input type='button' value='실행' id='btn' >
+<div id='result'></div>
+<script>
+let btn = document.querySelector('#btn');
+btn.onclick = func;       //callback 함수를 호출할 때는 ()를 사용하지않음.
+
+function func(){
+	 let result = document.querySelector('#result');
+	 let tag = document.querySelector('#tag');
+	 let obj = document.createElement(tag.value);
+     let str; 
+     str += '<table border="1"><tr><th>Attribute</th><th>Value</th></tr>';
+     for(x in obj){
+    	 str += '<tr>'
+    	     + '<td>' + x + '</td>'
+    	     + '<td>' + obj[x] + '</td>'
+    	     +'</tr>';
+     }
+
+     str += '</table>';
+     result.innerHTML = str;
+}   
+
+</script>
+</body>
+</html>
